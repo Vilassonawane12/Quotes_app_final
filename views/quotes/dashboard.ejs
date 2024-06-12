@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+<div class="dashboard">
+    <% if (notes && notes.length > 0) { %>
+      <% for(let i = 0; i < notes.length; i++) { %> 
+        <div class="content" style="background-color:<%= notes[i].color %>">
+          <p>
+            <%= notes[i].quotes %>
+          </p>
+          <div class="likeDate">
+            <span><%= new Date(notes[i].postAt).toLocaleDateString() %></span>
+            <div>
+              <span>Likes <%= notes[i].likes.length %></span>
+              <span>
+                <i class="fa-regular fa-heart <%= notes[i].likes.includes(user._id) ? 'liked' : '' %>"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+  
+<%- include('../partials/footer.ejs') %>

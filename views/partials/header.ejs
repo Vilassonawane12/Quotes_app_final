@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+      <nav class="nav-bar">
+          <ul  class="nav-menu">
+            <li class="logo">
+                <a href="/homepage"><span>Q</span>uote</a>
+            </li>
+            <li>
+                <a href="/homepage">Quote</a>
+            </li>
+            <% if (locals.user) { %>
+            <li>
+                <a href="/users/create">Create</a>
+            </li>
+          
+            <li>
+                <a href="/users/dashboard">Dashboard</a>
+            </li>
+            <li >
+                <a href="/users/logout" >Logout</a>
+            </li>
+
+            <li>
+                <a href="">Welcome, <span><%= locals.user %></span></a>
+             </li>
+             
+            <% } else { %>
+            <li>
+                <a href="/users/register">Register</a>
+            </li>
+            <li>
+                <a href="/users/login">Login</a>
+            </li>
+            <% } %>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+      </nav>
+    </header>

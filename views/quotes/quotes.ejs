@@ -1,0 +1,8 @@
+<%- include('../partials/header.ejs') %>
+<form action="/quotes/create" method="post" class="create">
+    <h2>Welcome,<%= locals.user %></h2>
+    <label for="quote">Create quote</label>
+    <textarea name="quote" id="quote" rows="10" cols="40" placeholder="Write your thought here"></textarea>
+    <button type="submit">Submit</button>
+</form>
+<%- include('../partials/footer.ejs') %>

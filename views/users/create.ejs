@@ -1,0 +1,11 @@
+<%- include('../partials/header.ejs') %>
+<div class="wrapper-create">
+  <form action="/users/create" method="post" class="create">
+    <h2>Welcome,<span><%= locals.user %>..!</span></h2>
+   <label for="quote">Create quote</label>
+  <textarea name="quotes" id="quote" rows="10" cols="40" placeholder="Write your thought here..!"></textarea> <br>
+  <input type="color" name="color" > <br>
+  <button type="submit">Submit</button>
+</form>
+</div>
+<%- include('../partials/footer.ejs') %>
